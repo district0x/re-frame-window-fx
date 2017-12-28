@@ -63,7 +63,7 @@ Fires `:dispatch` when location hash was changed
 (reg-event-fx
   ::my-event
   (fn []
-    {:window/on-hashchange {:dispatch [::window-hashchanged
+    {:window/on-hashchange {:dispatch [[::window-hashchanged]
                                        ;; :id is optional
                                        :id ::my-listener]}}))
 ```
