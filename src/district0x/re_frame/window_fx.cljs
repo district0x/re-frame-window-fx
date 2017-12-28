@@ -11,8 +11,10 @@
 
 (def *listeners* (atom {}))
 
-(defn- setup-listener! [event-type dispatch id]
-  (let [key (events/listen js/window event-type #(re-frame/dispatch dispatch))]
+(defn- setup-listener! [event-type callback id]
+  (let [key (events/listen js/window event-type (if (fn? callback)
+                                                  callback
+                                                  #(re-frame/dispatch callback)))]
     (when id
       (swap! *listeners* assoc-in [event-type id] key))))
 

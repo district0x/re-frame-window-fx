@@ -5,7 +5,7 @@
 [re-frame](https://github.com/Day8/re-frame) effect handlers related to browser window.
 
 ## Installation
-Add `[district0x/re-frame-window-fx "1.0.1"]` into your project.clj    
+Add `[district0x/re-frame-window-fx "1.0.2"]` into your project.clj    
 Include `[district0x.re-frame.window-fx]` in your CLJS file
 
 ## Usage
