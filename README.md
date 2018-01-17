@@ -8,6 +8,18 @@
 Add `[district0x/re-frame-window-fx "1.0.2"]` into your project.clj    
 Include `[district0x.re-frame.window-fx]` in your CLJS file
 
+## API Overview
+
+- [:window/on-resize](#windowon-resize)
+- [:window/stop-on-resize](#windowstop-on-resize)
+- [:window/on-focus](#windowon-focus)
+- [:window/stop-on-focus](#windowstop-on-focus)
+- [:window/on-blur](#windowon-blur)
+- [:window/stop-on-blur](#windowstop-on-blur)
+- [:window/on-hashchange](#windowon-hashchange)
+- [:window/stop-on-hashchange](#windowstop-on-hashchange)
+- [:window/scroll-to](#windowscroll-to)
+
 ## Usage
 #### `:window/on-resize`
 Fires `:dispatch` when browser window is resized. Can set `:debounce-ms` for debouncing event, to prevent too frequent firings.  
