@@ -1,11 +1,12 @@
 # re-frame-window-fx
 
-[![Build Status](https://travis-ci.org/district0x/re-frame-window-fx.svg?branch=master)](https://travis-ci.org/district0x/re-frame-window-fx)
+[![Clojars Project](https://img.shields.io/clojars/v/district0x/re-frame-window-fx.svg)](https://clojars.org/district0x/re-frame-window-fx)
+[![CircleCI](https://circleci.com/gh/district0x/re-frame-window-fx.svg?style=svg)](https://circleci.com/gh/district0x/re-frame-window-fx)
 
 [re-frame](https://github.com/Day8/re-frame) effect handlers related to browser window.
 
 ## Installation
-Add `[district0x/re-frame-window-fx "1.0.2"]` into your project.clj    
+Add `[district0x/re-frame-window-fx "VERSION"]` into your project.clj    
 Include `[district0x.re-frame.window-fx]` in your CLJS file
 
 ## API Overview
