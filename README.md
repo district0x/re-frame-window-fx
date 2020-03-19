@@ -105,7 +105,7 @@ Change the window title
 ```
 
 #### `:window.location/set-hash`
-Change the window title
+Change the window url hash ex. `mysite.com/#<hash>`
 ```clojure
 (reg-event-fx
   ::my-event
