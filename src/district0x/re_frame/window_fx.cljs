@@ -2,7 +2,9 @@
   (:require
     [cljs.spec.alpha :as s]
     [goog.events :as events]
-    [re-frame.core :as re-frame :refer [reg-fx]]))
+    [re-frame.core :as re-frame :refer [reg-fx]])
+  (:import [goog.events]))
+
 
 (s/def ::dispatch sequential?)
 (s/def ::debounce-ms int?)
@@ -78,3 +80,37 @@
   (fn [[x y]]
     (.scrollTo js/window x y)))
 
+(reg-fx
+  :window/set-title
+  (fn [title]
+    (aset js/document "title" title)))
+
+
+;; Set the URL hash for the window
+;; hash - string representing the hash
+(reg-fx
+  :window.location/set-hash
+  (fn [hash]
+    (->> hash str (.encodeURI js/window) (aset js/window "location" "hash"))))
+
+
+(defn- kw->url
+  "URL encode a keyword"
+  [kw]
+  (->> kw name (.encodeURI js/window)))
+
+
+;; FX, Set the URL search query for the window
+;; m - map of key value pairs to pass
+;; Note: keywords/strings are url encoded
+(reg-fx
+  :window.location/set-search-query
+  (fn [m]
+    (cond
+     (> (count m) 1)
+     (->> m
+          (mapcat (fn [[k v]] (str (kw->url k) "=" (kw->url v) "&")))
+          (aset js/window "location" "search"))
+     :else
+     (->> seq first (map kw->url) (reduce (fn [[k v]] (str k "=" v)))))))
+     

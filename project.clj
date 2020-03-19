@@ -19,6 +19,7 @@
                           [karma-cljs-test "^0.1.0"]]}
 
   :profiles {:dev {:dependencies [[cider/piggieback "0.4.2"]
+                                  [funcool/cuerdas "2.2.0"]
                                   [day8.re-frame/test "0.1.5"]
                                   [org.clojure/clojure "1.10.1"]
                                   [org.clojure/tools.nrepl "0.2.13"]
