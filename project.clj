@@ -1,4 +1,4 @@
-(defproject district0x/re-frame-window-fx "1.0.4-SNAPSHOT"
+(defproject district0x/re-frame-window-fx "1.1.0-SNAPSHOT"
   :description "re-frame effect handlers for browser window functions"
   :url "https://github.com/district0x/re-frame-window-fx"
   :license {:name "Eclipse Public License"
