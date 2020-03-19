@@ -20,6 +20,8 @@ Include `[district0x.re-frame.window-fx]` in your CLJS file
 - [:window/on-hashchange](#windowon-hashchange)
 - [:window/stop-on-hashchange](#windowstop-on-hashchange)
 - [:window/scroll-to](#windowscroll-to)
+- [:window/set-title](#window-set-title)
+- [:window/set-hash](#window-set-hash)
 
 ## Usage
 #### `:window/on-resize`
@@ -92,10 +94,65 @@ Scroll window into x y coordinates
   (fn []
     {:window/scroll-to [100 200]}))
 ```
-## Development
-```bash
-lein deps
 
-# To run tests and rerun on changes
-lein doo chrome tests
+#### `:window/set-title`
+Change the window title
+```clojure
+(reg-event-fx
+  ::my-event
+  (fn []
+    {:window/set-title "New Title"}))
+```
+
+#### `:window.location/set-hash`
+Change the window title
+```clojure
+(reg-event-fx
+  ::my-event
+  (fn []
+    {:window.location/set-hash "new-hash"}))
+```
+
+
+## Development
+_Tested on linux and MacOS_
+
+Type `make` to see a list of common commands
+
+### Quickstart
+
+```bash
+
+make clean-all deps test
+
+```
+
+### Setup
+
+```bash
+
+nvm use # optional
+make clean-all deps
+
+```
+
+### Testing
+
+For Local Testing
+
+Use
+```bash
+make test
+```
+
+or
+
+```bash
+make test-headless
+```
+
+To test using CircleCI (Recommended before pull requests)
+
+```bash
+make test-circleci
 ```
